@@ -8,7 +8,7 @@ on:
         description: Pick env to deploy to
         options:
         - dev
-        - prod
+        - prd
         required: true
 
 jobs:
@@ -16,20 +16,20 @@ jobs:
     if: ${{ inputs.envParam == 'dev' }}
     runs-on: ubuntu-latest
     env:
-      RG: dev-rg
+      User: ${{ secrets.USER }}
     steps:
       - uses: actions/checkout@v4
       - name: Run a multi-line script
         run: |
-          echo ${{ env.RG }}
+          echo ${{ env.User }}
 
   build_prod:
-    if: ${{ inputs.envParam == 'prod' }}
+    if: ${{ inputs.envParam == 'prd' }}
     runs-on: ubuntu-latest
     env:
-      RG: prod-rg
+       User: ${{ secrets.USER }}
     steps:
       - uses: actions/checkout@v4
       - name: Run a multi-line script
         run: |
-          echo ${{ env.RG }}
+          echo ${{ env.User }}
