@@ -1,4 +1,4 @@
-name: test
+name: testWithSingleJob
 
 on:
   workflow_dispatch:
