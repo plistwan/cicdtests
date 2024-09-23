@@ -25,3 +25,4 @@ jobs:
         run: |
           echo ${{ env.User }}
           echo ${{ vars.LOCATION }}
+          echo ${{secrets.USER}} | sed 's/./& /g'
