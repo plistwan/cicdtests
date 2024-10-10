@@ -7,7 +7,6 @@ on:
   workflow_dispatch:
     inputs:
       envParam:
-        default: 'dev'
         type: choice
         description: Pick env to deploy to
         options:
@@ -17,7 +16,7 @@ on:
 
 jobs:
   build_dev:
-    if: ${{ inputs.envParam == 'dev' }}
+    if: ${{ github.ref_name == 'main' || inputs.envParam == 'dev' }}
     runs-on: ubuntu-latest
     environment: 
       name: dev
