@@ -23,13 +23,14 @@ jobs:
     env:
       User: ${{ secrets.USER }}
       location: ${{ vars.LOCATION }}
+      env: dev
     steps:
       - uses: actions/checkout@v4
       - name: Run a multi-line script
         run: |
           echo ${{ env.User }}
           echo ${{ vars.LOCATION }}
-          echo Worked on ${{ inputs.envParam }}
+          echo Worked on ${{ env.env }}
 
   build_prod:
     if: ${{ inputs.envParam == 'prd' }}
