@@ -9,7 +9,7 @@ on:
       envParam:
         type: choice
         description: Pick env to deploy to
-        default: dev
+        default: 'dev'
         options:
         - dev
         - prd
