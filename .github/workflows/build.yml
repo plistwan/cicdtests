@@ -47,3 +47,4 @@ jobs:
           echo ${{ env.User }}
           echo ${{ vars.LOCATION }}
           echo Worked on ${{ inputs.envParam }}
+          echo echoecasdasdasdh
