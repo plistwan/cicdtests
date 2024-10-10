@@ -7,9 +7,9 @@ on:
   workflow_dispatch:
     inputs:
       envParam:
+        default: dev
         type: choice
         description: Pick env to deploy to
-        default: 'dev'
         options:
         - dev
         - prd
