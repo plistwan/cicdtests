@@ -26,6 +26,7 @@ jobs:
         run: |
           echo ${{ env.User }}
           echo ${{ vars.LOCATION }}
+          echo Worked on ${{ inputs.envParam }}
 
   build_prod:
     if: ${{ inputs.envParam == 'prd' }}
@@ -41,3 +42,4 @@ jobs:
         run: |
           echo ${{ env.User }}
           echo ${{ vars.LOCATION }}
+          echo Worked on ${{ inputs.envParam }}
